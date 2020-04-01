@@ -2,11 +2,15 @@
 print "Digite seu nome: "
 
 # entrada do teclado
-nome = gets.chomp
+num1 = gets.chomp.to_i
 
-print "Digite seu sobrenome: "
+print "Digite sua idade: "
 
-sobrenome = gets.chomp
+num2 = gets.chomp.to_i
 
 # concatena dentro da string usando #{variavel}
-puts "ola #{nome} #{sobrenome}!"
+#puts "ola meu nome é #{nome} e minha idade é #{idade}!"
+soma = num1 + num2
+sub = num1 - num2
+div = num1 / num2
+puts "soma: #{soma}\nsubtração: #{sub}\ndivisão: #{div}"
