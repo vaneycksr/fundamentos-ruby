@@ -1,0 +1,1 @@
+Conteúdo de um arquivo que vai ser lido em ruby
