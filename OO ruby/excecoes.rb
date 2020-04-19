@@ -18,8 +18,8 @@
 def soma(n1, n2)
   puts n1 + n2
 rescue StandardError => e
-  # puts e
-  puts 'Erro ao executar a soma'
+  puts e
+  # puts 'Erro ao executar a soma'
 end
 
 soma('ola', 2)
