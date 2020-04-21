@@ -1,0 +1,6 @@
+# frozen_string_literal: true
+
+# comando bundle init dentro da pasta, cria um projeto ruby,
+# criando automaticamento o arquivo Gemfile
+
+gem 'rspec'
