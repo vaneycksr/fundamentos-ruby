@@ -1,25 +1,7 @@
 # frozen_string_literal: true
 
-# classe que vai ser testada
-class ContaCorrente
-  attr_accessor :saldo, :mensagem, :limite
-
-  def initialize(saldo)
-    self.saldo = saldo
-    self.limite = 700.00
-  end
-
-  def saque(valor)
-    if valor > saldo
-      self.mensagem = 'Saldo insuficiente para saque :('
-    elsif valor > limite
-      self.mensagem = 'Limite máximo por saque é de R$ 700'
-    else
-      self.saldo -= valor
-
-    end
-  end
-end
+# importa o arquivo que contem a classe que vai ter testada
+require_relative '../app/bank'
 
 # suite de conta corrente, ou seja, tudo que for relacionado
 # a conta corrente vai ficar aqui
@@ -49,11 +31,11 @@ describe ContaCorrente do
         @conta.saque(100.00)
       end
 
-      it 'vejo mensagem de erro' do
+      it 'então exibe mensagem' do
         expect(@conta.mensagem).to eql 'Saldo insuficiente para saque :('
       end
 
-      it 'meu saldo permanece zerado' do
+      it 'e o saldo final com zero' do
         expect(@conta.saldo).to eql 0.00
       end
     end
@@ -64,26 +46,26 @@ describe ContaCorrente do
         @conta.saque(501.00)
       end
 
-      it 'vejo mensagem de erro' do
+      it 'então exibe mensagem de erro' do
         expect(@conta.mensagem).to eql 'Saldo insuficiente para saque :('
       end
 
-      it 'meu saldo permanece conforme o valor inicial' do
+      it 'e o saldo permanece' do
         expect(@conta.saldo).to eql 500.00
       end
     end
 
-    context 'quando o valor do saque é maior que o limite por transação' do
+    context 'quando supera o limite de saque' do
       before(:all) do
         @conta = ContaCorrente.new(1000.00)
         @conta.saque(701.00)
       end
 
-      it 'vejo mensagem de erro quando o valor do saque é maior que o limite' do
+      it 'então exibe mensagem' do
         expect(@conta.mensagem).to eql 'Limite máximo por saque é de R$ 700'
       end
 
-      it 'meu saldo permanece conforme o valor inicial' do
+      it 'e o saldo permanece' do
         expect(@conta.saldo).to eql 1000.00
       end
     end
