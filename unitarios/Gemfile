@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
+source 'https://rubygems.org'
+
 # comando bundle init dentro da pasta, cria um projeto ruby,
 # criando automaticamento o arquivo Gemfile
-
+gem 'cucumber'
 gem 'rspec'
+gem 'rspec_junit_formatter'
