@@ -1,38 +1,52 @@
 # Repositório para praticar Ruby e Rspec
 
-****** criando estrutura dos testes unitários ********
+Repositório criado para praticar a linguagem Ruby, e um curso de Ruby com Rspec.
 
-- cria o projeto em ruby
+## Criando estrutura dos testes unitários 
 
+> cria o projeto em ruby
+
+```shell
 $ bundle init
+```
 
-- no arquivo Gemfile, colocar dependências que vai utilizar
+> no arquivo Gemfile, colocar dependências que vai utilizar
 
-- ler as dependencias do arquivo Gemfile e instala
+### Ler as dependências do arquivo Gemfile e instala
 
+``` shell
 $ bundle install
+```
+### Cria a estrutura para implementar os testes
 
-- cria a estrutura para implementar os testes
-
+``` shell
 $ rspec --init
+```
 
-# Sobre geração de relatórios
+## Sobre geração de relatórios
 
-- gerar relatório em formato html
+- Gerar relatório em formato html
 
-1) na pasta do projeto
+> na pasta do projeto
 
-	$ rspec --format html --out report.html
+``` shell
+$ rspec --format html --out report.html
+```
 
-- caso queira executar em um servidor CI (Jenkins, Teamcity) qualquer tipo de servidor que executa builds
+- Caso queira executar em um servidor CI (Jenkins, Teamcity) qualquer tipo de servidor que executa builds
 
-1) adiciona esse dependência na Gemfile 
+> adiciona esse dependência na Gemfile 
 
 	gem 'rspec_junit_formatter'
-2) na pasta do projeto
+	
+> na pasta do projeto
 
-	$ bundle install
-3) na pasta do projeto
+``` shell
+$ bundle install
+```
 
-	$ rspec --format RspecJunitFormatter --out report.xml
+> na pasta do projeto
 
+``` shell
+$ rspec --format RspecJunitFormatter --out report.xml
+```
