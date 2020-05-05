@@ -9,3 +9,9 @@ puts carro[:nome]
 carro[:modelo] = 'SI'
 
 puts carro
+
+idade_pessoas = { van: 28, bel: 23, painho: 56, mainha: 50 }
+
+idade_pessoas.each do |_i, _j|
+  puts _i
+end
